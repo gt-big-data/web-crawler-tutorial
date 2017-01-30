@@ -72,6 +72,24 @@ Some things to consider:
 
 ## Basic Parser
 
+To make life much easier, several web pages have been pre-downloaded and saved in the `pages/` folder. A very simple HTML page, `test.html` was also hand-made to demonstrate extracting data from a page.
+
+To parse HTML, we'll use Beautiful Soup. It's very popular and makes handling HTML files much easier.
+
+    $ python
+    >>> from crawler import *
+    Congrats! Everything is set up. Type `exit()` to close python.
+    soup = load_page('test.html')
+
+To extract information from the page, use `soup.select` or `soup.select_one`.
+
+    >>> print(soup.select_one('h1').text)
+    u'Wacky Waving Inflatable Arm-Flailing Tubeman Emporium'
+    >>> soup.select('p')[1].text
+    u'Do you know how much electricty a WWIAFT uses per hour? I have no idea.'
+
+If you're feeling adventurous, feel free to grab data out of a much more complicated page such as `gtpd.html`.
+
 ## Advanced Parser
 
 Heavily dependent on the exact site(s) you're crawling. Check out QDoc in the `References` section at the bottom for an actual example.
@@ -95,6 +113,7 @@ Check out the crawlers under `References` to see how some actual crawlers deal w
 
 * Documentation for `requests`: http://docs.python-requests.org/en/master/
 * Documentation for `beautifulsoup`: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+* Documentation on CSS Selectors: https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors
 * Example of a simple crawler: https://github.com/gt-big-data/gtpd-crawler
   * Downloads and parses simple pages. Incomplete frontend. Stores data in MongoDB.
 * Example of a more advanced crawler: https://github.com/supersam654/gatech-maintenance-requests
