@@ -5,6 +5,7 @@ Link to presentation: https://docs.google.com/presentation/d/1rK-qsNt8VyONMEGnwj
 
 ## Prerequisites
 
+* git
 * Python (2 or 3)
 * `pip` (should be installed already if you have python)
 
@@ -16,6 +17,7 @@ Note for Mac and some Linux users: You might need to type `sudo` before that com
 
 ## Is it working?
 
+    $ git clone https://github.com/gt-big-data/web-crawler-tutorial
     $ cd /path/to/this/file
     $ python
     >>> from crawler import *
