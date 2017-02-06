@@ -8,6 +8,8 @@ MAIN_GTPD_URL = 'http://www.police.gatech.edu/crimeinfo/crimelogs/noncrimelog.ht
 GOOD_URL = 'http://httpstat.us/200'
 BAD_URL = 'http://httpstat.us/500'
 
+BAD_HTML = '<p><br>Yo</br></p>'
+
 def get_page(url):
     res = requests.get(url)
     if not res.ok:
